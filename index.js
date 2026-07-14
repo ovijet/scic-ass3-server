@@ -95,7 +95,11 @@ app.delete("/addBook/:id", async (req, res) => {
   res.send(result);
 });
 
-  
+
+app.get('/addBook', async (req, res) => {
+  const result = await booksCollection.find().limit(4).toArray();
+  res.send(result);
+});
 
 
  
